@@ -1,0 +1,24 @@
+$ ls -l --block-size=MB
+total 4MB
+-rw-r--r-- 1 Pooja 197609 1MB Feb  9 13:17 LICENSE.txt
+-rw-r--r-- 1 Pooja 197609 1MB Feb  9 13:18 ReleaseNotes.html
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:34 bin/
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:34 cmd/
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:34 dev/
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:34 etc/
+-rwxr-xr-x 1 Pooja 197609 1MB Feb  9 12:57 git-bash.exe*
+-rwxr-xr-x 1 Pooja 197609 1MB Feb  9 12:57 git-cmd.exe*
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:33 mingw64/
+dr-xr-xr-x 9 Pooja 197609 0MB Mar  2 17:13 proc/
+drwxr-xr-x 1 Pooja 197609 0MB Mar  2 17:10 tmp/
+-rw-r--r-- 1 Pooja 197609 2MB Feb 24 09:34 unins000.dat
+-rwxr-xr-x 1 Pooja 197609 2MB Feb 24 09:32 unins000.exe*
+-rw-r--r-- 1 Pooja 197609 1MB Feb 24 09:34 unins000.msg
+drwxr-xr-x 1 Pooja 197609 0MB Feb 24 09:34 usr/
+#!/bin/bash
+
+read -p "Enter the Location" $location
+
+echo "The size of Each file is:"
+ls -l $location | awk -F":" '{print $6}'
+
